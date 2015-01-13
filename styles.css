@@ -29,7 +29,7 @@ header ul li{
   border: 1px solid red;
   display: inline-block;
   height: 60vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .right{
   float: right;
@@ -44,18 +44,59 @@ footer, .footer{
   clear: both;
   width: 100%;
 }
+footer span{
+  border-radius: 2px;
+  background-color: darkgray;
+  color: lightgray;
+  padding: 5px;
+  margin: 2px;
+  display: inline-block;
+}
 .selected{
   background-color: lightyellow;
 }
+/*.selected:after{
+  content: '';
+  width: 1px;
+  height: 1px;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid green;
+}*/
 .hide{
   display: none;
 }
 small{
   color: gray;
 }
-.example{
+.meta-data, .example ul{
+  float: left;
+  display: inline-block;
+}
+.meta-data{
+  float: left;
+}
+.example ul{
+  float: right;
+  width: 120px;
+}
+.left > ul li{
+  background: lightgray;
+}
+.left > ul .example{
   padding: 1em;
-  border: 1px solid gray;
+  border: 1px solid white;
+  display: block;
+}
+.example:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.example:hover{
+  cursor: pointer;
 }
 .example ul{
   font-size: 0.9em;

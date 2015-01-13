@@ -10,7 +10,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     $(this).addClass('selected');
     var id = $(this).attr('id');
     var videoSrc = videos[id];
-    $('iframe').attr('src', videoSrc);
+    if(videoSrc){
+      $('iframe').attr('src', videoSrc);
+    } else {
+      $('.right').html('<p style="text-align:center; margin-top: 10%;">There is no video</p>');
+    }
   });
 
 });

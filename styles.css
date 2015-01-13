@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  font-family: Helvetica;
+}
+h2{
+  font-size: 1.1em;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+ul li{
+  list-style-type: none;
+}
+header, .header{
+  background: aliceblue;
+  display: block;
+  height: 20vh;
+}
+header img{
+  height: 100%;
+}
+header ul li{
+  display: inline-block;
+}
+.left{
+  float: left;
+  width: 49.8%;
+  border: 1px solid red;
+  display: inline-block;
+  height: 60vh;
+  overflow: scroll;
+}
+.right{
+  float: right;
+  width: 49.8%;
+  border: 1px solid blue;
+  display: inline-block;
+  height: 60vh;
+}
+footer, .footer{
+  background: lightyellow;
+  display: block;
+  clear: both;
+  width: 100%;
+}
+.selected{
+  background-color: lightyellow;
+}
+.hide{
+  display: none;
+}
+small{
+  color: gray;
+}
+.example{
+  padding: 1em;
+  border: 1px solid gray;
+}
+.example ul{
+  font-size: 0.9em;
+  padding: 0.2em 0;
+}

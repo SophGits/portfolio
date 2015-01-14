@@ -148,6 +148,9 @@ small{
   display: inline-block;
   float: left;
 }
+.left > ul > li:not(:first-child){
+  border-top: 1px solid gray;
+}
 .left > ul > li:hover{
   background: #ccc;
 }

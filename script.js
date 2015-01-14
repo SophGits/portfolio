@@ -59,6 +59,6 @@ $('li div').on('click', function(){
 
 
 
-      function onYouTubePlayerReady(plid) {
-        console.log("onYouTubePlayerReady() Fired!");
+      function onYouTubeIframeAPIReady(){
+        console.log('iframe api ready');
       }

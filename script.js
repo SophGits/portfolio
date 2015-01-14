@@ -29,6 +29,7 @@ $('li div').on('click', function(){
   var iframes = $('iframe');
   $.each(iframes, function(i, v){
     $(this).removeClass('hide').addClass('hide');
+        // $(this).stopVideo();
   })
 
   if(name !==''){
@@ -55,3 +56,9 @@ $('li div').on('click', function(){
 
 
 });
+
+
+
+      function onYouTubePlayerReady(plid) {
+        console.log("onYouTubePlayerReady() Fired!");
+      }

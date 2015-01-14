@@ -148,8 +148,8 @@ small{
   display: inline-block;
   float: left;
 }
-.left > ul > li{
-  /*background: #FAFAFA;*/
+.left > ul > li:hover{
+  background: #ccc;
 }
 .left > ul .example{
   padding: 1em;

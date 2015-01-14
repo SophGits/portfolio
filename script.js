@@ -26,25 +26,32 @@ $('li div').on('click', function(){
   $(this).addClass('selected');
   var name = $(this).attr('id');
 
-  var namelength = name.length;
-
   var iframes = $('iframe');
   $.each(iframes, function(i, v){
     $(this).removeClass('hide').addClass('hide');
   })
 
- $('iframe').filter(function (){
-     var classes = $(this).attr('class').split(' ');
-     for (var i=0; i<classes.length; i++){
-       if (classes[i].slice(0, namelength) === name){
+  if(name !==''){
+
+    var namelength = name.length;
+
+    $('iframe').filter(function (){
+      var classes = $(this).attr('class').split(' ');
+      for (var i=0; i<classes.length; i++){
+        if (classes[i].slice(0, namelength) === name){
           $(this).removeClass('hide');
           return true;
-       }
-     }
-     console.log('false');
-     return false;
- });
-});
+        }
+      }
+      console.log('false');
+      return false;
+    });
+
+  } else {
+    console.log('no matching video or content');
+  }
+
+  });
 
 
 });

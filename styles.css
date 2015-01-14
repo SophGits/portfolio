@@ -46,7 +46,8 @@ header ul li{
     width: 50%;
     float: left;
     display: inline-block;
-    height: 500px;
+    /*height: 500px;*/
+    height: calc(100% - 235px);
     overflow-y: scroll;
   }
   .example > ul{
@@ -60,7 +61,9 @@ header ul li{
   .right{
     width: 50%;
     display: inline-block;
-    height: 500px;
+    /*height: 500px;*/
+    min-height: 300px;
+    height: calc(100% - 235px);
     padding: 1em;
     text-align: center;
     /*background: #151515;*/
@@ -99,7 +102,8 @@ header ul li{
     width: 40%;
     float: left;
     display: inline-block;
-    height: 500px;
+    /*height: 500px;*/
+    height: calc(100% - 235px);
     overflow-y: scroll;
   }
   .meta-data, .example > ul{
@@ -109,7 +113,9 @@ header ul li{
   .right{
     width: 60%;
     display: inline-block;
-    height: 500px;
+    /*height: 500px;*/
+    min-height: 300px;
+    height: calc(100% - 235px);
     padding: 1em;
     text-align: center;
     /*background: #151515;*/
@@ -118,13 +124,14 @@ header ul li{
     width: 100%;
   }
 }
-
+iframe{z-index: 0;}
 body > footer, footer, .footer{
   display: block;
   clear: both;
   width: 100%;
   padding: 1em;
   background: #151515;
+  z-index: 10;
 }
 footer span{
   border-radius: 2px;

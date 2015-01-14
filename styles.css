@@ -2,6 +2,11 @@
   margin: 0;
   font-family: Helvetica;
 }
+html{
+  max-width: 1400px;
+  display: block;
+  margin: 0 auto;
+}
 h2{
   font-size: 1.1em;
 }
@@ -15,20 +20,22 @@ ul li{
 header, .header{
   background: aliceblue;
   display: block;
-  height: 20vh;
+  height: 150px;
+  padding: 1em;
 }
 header img{
   height: 100%;
 }
 header ul li{
   display: inline-block;
+  border: 1px solid lightgray;
 }
 .left{
   float: left;
   width: 49.8%;
   border: 1px solid red;
   display: inline-block;
-  height: 60vh;
+  height: 500px;
   overflow-y: scroll;
 }
 .right{
@@ -36,13 +43,14 @@ header ul li{
   width: 49.8%;
   border: 1px solid blue;
   display: inline-block;
-  height: 60vh;
+  height: 500px;
 }
 footer, .footer{
   background: lightyellow;
   display: block;
   clear: both;
   width: 100%;
+  padding: 1em;
 }
 footer span{
   border-radius: 2px;
@@ -52,7 +60,7 @@ footer span{
   margin: 2px;
   display: inline-block;
 }
-.selected{
+.selected, .selected ul{
   background-color: lightyellow;
 }
 /*.selected:after{
@@ -80,7 +88,7 @@ small{
   float: right;
   width: 120px;
 }
-.left > ul li{
+.left > ul > li{
   background: lightgray;
 }
 .left > ul .example{

@@ -1,6 +1,7 @@
 *{
   margin: 0;
   font-family: Helvetica;
+  box-sizing: border-box;
 }
 html{
   max-width: 1400px;
@@ -44,6 +45,8 @@ header ul li{
   border: 1px solid blue;
   display: inline-block;
   height: 500px;
+  padding: 1em;
+  text-align: center;
 }
 footer, .footer{
   background: lightyellow;

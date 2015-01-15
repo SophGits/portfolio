@@ -3,16 +3,19 @@
   font-family: Helvetica;
   box-sizing: border-box;
 }
+body{
+  margin: 0 1em;
+}
 a, a:visited{
   text-decoration: none;
   font-weight: 300;
   color: gray;
 }
 a:hover{
-  color: red;
+  color: navy;
 }
 html{
-  max-width: 1400px;
+  max-width: 1800px;
   display: block;
   margin: 0 auto;
 }

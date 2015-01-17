@@ -55,10 +55,15 @@ $('li div').on('click', function(){
   });
 
 
-});
 
 
 
-      function onYouTubeIframeAPIReady(){
-        console.log('iframe api ready');
-      }
+  // function createYTEvent(frameID, identifier){
+  //   console.log(this);
+  //   console.log(frameID);
+  //   console.log(identifier);
+  // }
+
+
+}); // DOM Content Loaded
+

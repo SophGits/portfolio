@@ -29,52 +29,6 @@
 
   <nav class="left">
 
-
-
-  <script>
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      var player;
-          function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-              height: '390',
-              width: '640',
-              videoId: 'M7lc1UVf-VE',
-              src: "https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://www.github.io",
-              events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-              },
-            });
-          }
-
-      // 4. The API will call this function when the video player is ready.
-         function onPlayerReady(event) {
-          console.log(event);
-           console.log("ready");
-         }
-
-         // 5. The API calls this function when the player's state changes.
-         //    The function indicates that when playing a video (state=1),
-         //    the player should play for six seconds and then stop.
-
-         function onPlayerStateChange(event) {
-           if (event.data == YT.PlayerState.PLAYING) {
-            console.log("playing now");
-           }
-         }
-         function stopVideo() {
-           player.stopVideo();
-         }
-
-  </script>
- <div id="player"></div>
-
-
     <ul>
 
       <li>
@@ -99,7 +53,7 @@
           <div class="meta-data">
             <small>October 2014</small>
             <h1>Backbone</h1>
-            <p>More words about Things go here. Will there be more than this to say? Who knows; maybe, but maybe there won't be. Best I can do is write a lot now, just in case I end up writing a lot later and need it to look good.</p>
+            <p>Trying out Backbone.js for the first time. Three examples.</p>
           </div>
           <ul>
             <li>Backbone.js</li>
@@ -112,11 +66,11 @@
       <li>
         <div id="devices" class="example">
           <div class="meta-data">
+            <small>March - September 2014</small>
             <h1>Devices</h1>
-
           </div>
           <ul>
-            <li>XCode</li>
+            <li>Xcode</li>
             <li>icon font</li>
             <li>JavaScript</li>
           </ul>
@@ -141,7 +95,7 @@
         </div>
       </li>
 
-      <li>
+    <!--   <li>
         <div id="outstanding" class="example">
           <div class="meta-data">
             <small>May 2014</small>
@@ -154,12 +108,12 @@
             <li>JavaScript</li>
           </ul>
         </div>
-      </li>
+      </li> -->
 
       <li>
         <div id="comicreader" class="example">
           <div class="meta-data">
-            <small>May 2014</small>
+            <small>November 2013</small>
             <h1>Comic Reader</h1>
           </div>
           <ul>
@@ -177,18 +131,18 @@
 
   <section class="right">
 
-    <iframe id="backbone" class="hide backbone" width="640" height="360" frameborder="0" src='http://www.youtube.com/v/ABAFEw2BBt4?version=3&autohide=1&color=white&controls=2&modestbranding=1&rel=0&showinfo=0&theme=light' allowfullscreen></iframe>
+    <iframe id="backbone" class="hide backbone" width="640" height="360" frameborder="0" src='http://www.youtube.com/embed/ABAFEw2BBt4' allowfullscreen ></iframe>
 
-    <iframe id="css3" class="hide css3" width="640" height="360" frameborder="0" src='http://www.youtube.com/v/oDR_fSKYhGQ?version=3&autohide=1&color=white&controls=2&modestbranding=1&rel=0&showinfo=0&theme=light' allowfullscreen></iframe>
+    <iframe id="css3" class="hide css3" width="640" height="360" frameborder="0" src='http://www.youtube.com/embed/oDR_fSKYhGQ' allowfullscreen></iframe>
 
-    <iframe id="devices" class="hide devices" width="640" height="360" src="http://www.youtube.com/embed/j2j1sBiI-qE?autohide=1&color=white&controls=2&modestbranding=1&rel=0&showinfo=0&theme=light" frameborder="0" allowfullscreen></iframe>
+    <iframe id="devices" class="hide devices" width="640" height="360" src="http://www.youtube.com/embed/j2j1sBiI-qE" frameborder="0" allowfullscreen ></iframe>
 
-    <iframe id="kusiri" class="hide kusiri" width="640" height="360" src='http://www.youtube.com/embed/qiaZ8S7amS4?autohide=1&color=white&controls=2&modestbranding=1&rel=0&showinfo=0&theme=light' frameborder="0" allowfullscreen></iframe>
+    <iframe id="kusiri" class="hide kusiri" width="640" height="360" src='http://www.youtube.com/embed/qiaZ8S7amS4' frameborder="0" allowfullscreen ></iframe>
 
-    <iframe id="outstanding" class="hide outstanding" width="640" height="360" src='' frameborder="0" allowfullscreen></iframe>
+<!--     <iframe id="outstanding" class="hide outstanding" width="640" height="360" src='' frameborder="0" allowfullscreen></iframe> -->
     <!-- original aspect    width="854" height="510" -->
 
-    <iframe id="comicreader" class="hide comicreader" width="640" height="360" frameborder="0" src='http://www.youtube.com/embed/jBeZjb68eks?autohide=1&color=white&controls=2&modestbranding=1&rel=0&showinfo=0&theme=light' allowfullscreen></iframe>
+    <iframe id="comicreader" class="hide comicreader" width="640" height="360" frameborder="0" src='http://www.youtube.com/embed/jBeZjb68eks' allowfullscreen></iframe>
 
 
 

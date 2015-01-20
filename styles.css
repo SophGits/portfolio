@@ -78,6 +78,7 @@ body:not(.mobile),
 }
 
 @media screen and (max-width: 767px),
+@media screen and (max-device-width: 767px) and (-webkit-device-pixel-ratio: 1.5),
 .mobile {
   .small-screen-note{
     text-align: center;

@@ -76,6 +76,7 @@ window.onload = function(){
     }
     $('.test3').html(deviceWidth);
   }
+  effectiveDeviceWidth();
 
 
 }

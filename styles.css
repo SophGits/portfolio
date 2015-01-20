@@ -5,6 +5,7 @@
 }
 body{
   margin: 0 1em;
+  width: auto !important;
 }
 a, a:visited{
   text-decoration: none;

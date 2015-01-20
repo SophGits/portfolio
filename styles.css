@@ -77,8 +77,9 @@ header ul li{
 }
 
 /*.mobile,*/
-/*@media screen and (max-width: 767px),*/
-@media screen and (max-device-width: 767px) and (orientation: portrait){
+@media screen and (max-width: 767px)
+/*@media screen and (max-device-width: 767px) and (orientation: portrait)*/
+{
   .small-screen-note{
     text-align: center;
     background: #A40019;/*darkred*/
@@ -99,9 +100,7 @@ header ul li{
   }
 }
 
-@media only screen and (min-width : 768px) and (max-width : 1024px),
-body:not(.mobile)
-{
+@media only screen and (min-width : 768px) and (max-width : 1024px){
   .small-screen-note{
     display: none;
   }

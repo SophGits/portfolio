@@ -76,9 +76,9 @@ header ul li{
   }
 }
 
-@media screen and (max-width: 767px),
-@media screen and (max-device-width: 480px) and (orientation: portrait),
-.mobile {
+/*.mobile,*/
+/*@media screen and (max-width: 767px),*/
+@media screen and (max-device-width: 767px) and (orientation: portrait){
   .small-screen-note{
     text-align: center;
     background: #A40019;/*darkred*/

@@ -1,26 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  // var videos = {
-  //   kusiri: 'http://www.youtube.com/embed/qiaZ8S7amS4',
-  //   outstanding: 'http://www.youtube.com/embed/zJ-4muRmqBM',
-  //   comicreader: 'http://www.youtube.com/embed/jBeZjb68eks'
-  // }
-
-  // $('li div').on('click', function(){
-  //   $('li div').removeClass('selected');
-  //   $(this).addClass('selected');
-  //   var id = $(this).attr('id');
-  //   var videoSrc = videos[id];
-  //   if(videoSrc){
-  //     $('iframe').removeClass('hide').attr('src', videoSrc);
-  //     $('.right p').removeClass('hide').addClass('hide');
-  //   } else {
-  //     $('iframe').removeClass('hide').addClass('hide');
-  //     $('.right p').removeClass('hide');
-  //   }
-  // });
-
-
 $('li div').on('click', function(){
   $('li div').removeClass('selected');
   $(this).addClass('selected');
@@ -65,12 +44,24 @@ $('li div').on('click', function(){
   // }
 
 
-
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-      $('body').addClass('mobile');
-  } else if (screen.width < 760) {
-     $('body').addClass('mobile');
-  }
-
 }); // DOM Content Loaded
 
+
+var checkSize = function(){
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      $('body').addClass('mobile');
+  } else if (window.innerWidth <= 760) {
+     $('body').addClass('mobile');
+  } else if (window.innerWidth > 760) {
+     $('body').removeClass('mobile');
+  }
+}
+
+
+window.onload = function(){
+  checkSize();
+}
+
+window.onresize = function(){
+  checkSize();
+}

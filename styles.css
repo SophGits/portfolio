@@ -88,6 +88,7 @@ body.mobile {
   }
   .left {
     width: 100%;
+    background: aliceblue;
   }
   .meta-data, .example ul{
     display: block;
@@ -96,7 +97,6 @@ body.mobile {
   .right{
     display: none;
   }
-  div{background: aliceblue;}
 }
 
 @media only screen and (min-width : 768px) and (max-width : 1024px){

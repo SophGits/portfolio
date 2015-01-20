@@ -35,6 +35,8 @@ $('li div').on('click', function(){
 
    var w = window.innerWidth;
    $('.test').html(w);
+   var sw = screen.width;
+   $('.test2').html(sw);
 
 
 

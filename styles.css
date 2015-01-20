@@ -190,7 +190,7 @@ small{
 }
 
 
-.test{
+.test, .test2{
   font-size: 12px;
   color: blue;
 }

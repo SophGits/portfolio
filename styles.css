@@ -187,3 +187,9 @@ small{
   font-size: 0.9em;
   padding: 0.2em 0;
 }
+
+
+.test{
+  font-size: 12px;
+  color: blue;
+}

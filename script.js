@@ -60,8 +60,12 @@ var checkSize = function(){
 
 window.onload = function(){
   checkSize();
+  var w = window.innerWidth;
+  $('.test').html(w);
 }
 
 window.onresize = function(){
   checkSize();
+  var w = window.innerWidth;
+  $('.test').html(w);
 }

@@ -85,5 +85,15 @@ window.onload = function(){
     $('.test').html('innerwidth: ' + w);
   }
 
-}
+
+  $('.example').click(function(){
+    var iframes = $('iframe');
+    for (var i=0; i<iframes.length; i++){
+      var iframe = iframes[i].contentWindow;
+      iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+  });
+
+
+} // window onload
 

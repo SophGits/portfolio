@@ -33,7 +33,8 @@ $('li div').on('click', function(){
 
   });
 
-
+ var w = window.innerWidth;
+  $('.test').html(w);
 
 
 

@@ -65,6 +65,19 @@ window.onload = function(){
   checkSize();
   var w = window.innerWidth;
   $('.test').html(w);
+
+
+  function effectiveDeviceWidth() {
+    var deviceWidth = window.orientation == 0 ? window.screen.width : window.screen.height;
+    // iOS returns available pixels, Android returns pixels / pixel ratio
+    // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
+    if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
+      deviceWidth = deviceWidth / window.devicePixelRatio;
+    }
+    $('.test3').html(deviceWidth);
+  }
+
+
 }
 
 window.onresize = function(){

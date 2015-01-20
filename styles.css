@@ -41,7 +41,6 @@ header img{
 header ul li{
   display: inline-block;
 }
-body:not(.mobile),
 @media screen and (min-width: 1025px) {
   .small-screen-note{
     display: none;
@@ -78,7 +77,6 @@ body:not(.mobile),
 }
 
 @media screen and (max-width: 767px),
-@media screen and (max-device-width: 767px) and (-webkit-device-pixel-ratio: 1.5),
 .mobile {
   .small-screen-note{
     text-align: center;
@@ -90,7 +88,6 @@ body:not(.mobile),
   }
   .left {
     width: 100%;
-    background: aliceblue;
   }
   .meta-data, .example ul{
     display: block;

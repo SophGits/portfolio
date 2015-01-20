@@ -36,7 +36,7 @@ $('li div').on('click', function(){
    var w = window.innerWidth;
    $('.test').html(w);
    var sw = screen.width;
-   $('.test2').html(sw);
+   $('.test2').html('screenwidth: ' + sw);
 
 
 
@@ -64,7 +64,7 @@ window.onload = function(){
   }
   checkSize();
   var w = window.innerWidth;
-  $('.test').html(w);
+  $('.test').html('innerwidth: ' + w);
 
 
   var effectiveDeviceWidth = function() {
@@ -74,15 +74,16 @@ window.onload = function(){
     if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
       deviceWidth = deviceWidth / window.devicePixelRatio;
     }
-    $('.test3').html(deviceWidth);
+    $('.test3').html('devicewidth: ' + deviceWidth);
   }
   effectiveDeviceWidth();
 
 
+  window.onresize = function(){
+    checkSize();
+    var w = window.innerWidth;
+    $('.test').html('innerwidth: ' + w);
+  }
+
 }
 
-window.onresize = function(){
-  checkSize();
-  var w = window.innerWidth;
-  $('.test').html(w);
-}

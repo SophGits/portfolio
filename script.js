@@ -53,9 +53,9 @@ $('li div').on('click', function(){
 var checkSize = function(){
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
       $('body').addClass('mobile');
-  } else if (window.innerWidth <= 760) {
+  } else if (usableWidth <= 760) {
      $('body').addClass('mobile');
-  } else if (window.innerWidth > 760) {
+  } else if (window.innerWidth > 760 || usableWidth > 760) {
      $('body').removeClass('mobile');
   }
 }
@@ -63,11 +63,11 @@ var checkSize = function(){
 
 window.onload = function(){
   checkSize();
-  var w = window.innerWidth;
-  $('.test').html(w);
+  // var w = window.innerWidth;
+  // $('.test').html(w);
 
 
-  function effectiveDeviceWidth() {
+  var usableWidth = function effectiveDeviceWidth() {
     var deviceWidth = window.orientation == 0 ? window.screen.width : window.screen.height;
     // iOS returns available pixels, Android returns pixels / pixel ratio
     // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
@@ -76,7 +76,7 @@ window.onload = function(){
     }
     $('.test3').html(deviceWidth);
   }
-  effectiveDeviceWidth();
+  usableWidth();
 
 
 }

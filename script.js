@@ -1,71 +1,76 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-$('li div').on('click', function(){
-  $('li div').removeClass('selected');
-  $(this).addClass('selected');
-  var name = $(this).attr('id');
+  // add a seledcted class to an example
+  $('li div').on('click', function(){
+    $('li div').removeClass('selected');
+    $(this).addClass('selected');
+    var name = $(this).attr('id');
 
-  var iframes = $('iframe');
-  $.each(iframes, function(i, v){
-    $(this).removeClass('hide').addClass('hide');
-        // $(this).stopVideo();
-  })
-
-  if(name !==''){
-
-    var namelength = name.length;
-
-    $('iframe').filter(function (){
-      var classes = $(this).attr('class').split(' ');
-      for (var i=0; i<classes.length; i++){
-        if (classes[i].slice(0, namelength) === name){
-          $(this).removeClass('hide');
-          return true;
+    var iframes = $('iframe');
+    // hide all iframes
+    $.each(iframes, function(i, v){
+      $(this).removeClass('hide').addClass('hide');
+    })
+    // unhide iframe relating to clicked example
+    if(name !=='' || name !== undefined || name !== 'undefined'){
+      var namelength = name.length;
+      $('iframe').filter(function (){
+        var classes = $(this).attr('class').split(' ');
+        for (var i=0; i<classes.length; i++){
+          if (classes[i].slice(0, namelength) === name){
+            $(this).removeClass('hide');
+            return true;
+          }
         }
-      }
-      console.log('false');
-      return false;
-    });
-
-  } else {
-    console.log('no matching video or content');
-  }
-
+        // console.log('false');
+        // return false;
+      });
+    } else {
+      console.log('no matching video or content');
+      return
+    }
   });
 
-   var w = window.innerWidth;
-   $('.test').html(w);
+  // window & screen widths
+  var w = window.innerWidth;
+  $('.test').html('innerwidth: ' + w);
    var sw = screen.width;
-   $('.test2').html('screenwidth: ' + sw);
-
-
-
-  // function createYTEvent(frameID, identifier){
-  //   console.log(this);
-  //   console.log(frameID);
-  //   console.log(identifier);
-  // }
+  $('.test2').html('screenwidth: ' + sw);
 
 
 }); // DOM Content Loaded
 
 
-
-
 window.onload = function(){
+  var positionVideos = function(){
+     // in phone width, detach iframe and append to current selection
+    $('.left ul li').on('click', '.example', function(e){
+      var name = this.id;
+      name = "." + name;
+      var video = $('iframe').siblings(name)[0];
+      video = $(video).detach();
+      if($('body').hasClass('mobile')){
+        $(this).append(video);
+        return
+      } else {
+        putBack(video);
+      }
+    });
+    var putBack = function(video){
+      $('.right').append(video);
+      console.log('should put back video');
+    }
+  }
   var checkSize = function(){
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        $('body').addClass('mobile');
-    } else if (effectiveDeviceWidth <= 760) {
-       $('body').addClass('mobile');
+      $('body').removeClass('mobile').addClass('mobile');
+    } else if (window.innerWidth <= 760) {
+       $('body').removeClass('mobile').addClass('mobile');
     } else if (window.innerWidth > 760) {
        $('body').removeClass('mobile');
     }
+   positionVideos();
   }
-  checkSize();
-  var w = window.innerWidth;
-  $('.test').html('innerwidth: ' + w);
-
 
 
   $('.example').click(function(){
@@ -86,24 +91,14 @@ window.onload = function(){
     $('.test3').html('devicewidth: ' + deviceWidth);
     return deviceWidth;
   }
-  effectiveDeviceWidth();
 
   window.onresize = function(){
-    checkSize();
     var w = window.innerWidth;
     $('.test').html('innerwidth: ' + w);
-
-    // in phone width, detach iframe and append to current selection
-    $('.left ul li').on('click', '.example', function(e){
-      var name = this.id;
-      if(effectiveDeviceWidth() < 800){
-        name = "." + name;
-        var video = $('iframe').siblings(name)[0];
-        video = $(video).detach();
-        $(this).append(video);
-      }
-    })
+    checkSize();
   }
 
+  checkSize();
+  effectiveDeviceWidth();
 } // window onload
 

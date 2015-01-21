@@ -92,6 +92,9 @@ header ul li{
   .left {
     width: 100%;
   }
+  .left iframe{
+    width: 100%;
+  }
   .meta-data, .example ul{
     display: block;
     width: 100%;

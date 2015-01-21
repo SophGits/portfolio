@@ -44,37 +44,61 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 window.onload = function(){
-  var positionVideos = function(){
+
+  var putBack = function(){
+    $('iframe').filter(function(i, v){
+      $(v).hasClass('hide') ? console.log('true'): replace(this);
+    });
+    function replace(vid){
+      var vid = $(vid).detach();
+      $('.right').append(vid);
+    }
+    console.log('should put back video');
+  }
+
+  function resizeDirection(){
+    $(window).data("old", {width: $(window).width()});
+    $(window).resize(function(e) {
+      var oldWidth = $(this).data("old").width;
+      var newWidth = $(this).width();
+        if(oldWidth <= 767 && newWidth > 767){
+          console.log("crossing the threshhold");
+          putBack();
+        } else if(newWidth - oldWidth > 0){
+          console.log("getting bigger")
+        } else if(newWidth - oldWidth < 0){
+          console.log("getting smaller")
+        }
+     $(window).data("old", {width: $(this).width()});
+    });
+  }
+  resizeDirection();
+
+  var positionVideos = function(bool){
      // in phone width, detach iframe and append to current selection
+     var video;
     $('.left ul li').on('click', '.example', function(e){
       var name = this.id;
       name = "." + name;
-      var video = $('iframe').siblings(name)[0];
+      video = $('iframe').siblings(name)[0];
       if($('body').hasClass('mobile')){
         video = $(video).detach();
         $(this).append(video);
-        return
-      } else {
-        //         video = $(video).detach();
-        // putBack(video);
+        return video;
       }
     });
-    // var putBack = function(video){
-    //   $('.right').append(video);
-    //   console.log('should put back video');
-    // }
   }
+
   var checkSize = function(){
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
       $('body').removeClass('mobile').addClass('mobile');
-    } else if (window.innerWidth <= 760) {
+    } else if (window.innerWidth <= 767) {
        $('body').removeClass('mobile').addClass('mobile');
-    } else if (window.innerWidth > 760) {
+    } else if (window.innerWidth > 767) {
        $('body').removeClass('mobile');
     }
    positionVideos();
   }
-
 
   $('.example').click(function(){
     var iframes = $('iframe');
@@ -84,24 +108,24 @@ window.onload = function(){
     }
   });
 
-  var effectiveDeviceWidth = function() {
-    var deviceWidth = window.orientation == 0 ? window.screen.width : window.screen.height;
-    // iOS returns available pixels, Android returns pixels / pixel ratio
-    // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
-    if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
-      deviceWidth = deviceWidth / window.devicePixelRatio;
-    }
-    $('.test3').html('devicewidth: ' + deviceWidth);
-    return deviceWidth;
-  }
-
   window.onresize = function(){
     var w = window.innerWidth;
     $('.test').html('innerwidth: ' + w);
     checkSize();
   }
 
+  // var effectiveDeviceWidth = function() {
+  //   var deviceWidth = window.orientation == 0 ? window.screen.width : window.screen.height;
+  //   // iOS returns available pixels, Android returns pixels / pixel ratio
+  //   // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
+  //   if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
+  //     deviceWidth = deviceWidth / window.devicePixelRatio;
+  //   }
+  //   $('.test3').html('devicewidth: ' + deviceWidth);
+  //   return deviceWidth;
+  // }
+  // effectiveDeviceWidth();
+
   checkSize();
-  effectiveDeviceWidth();
 } // window onload
 

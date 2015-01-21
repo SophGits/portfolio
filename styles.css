@@ -42,6 +42,7 @@ header img{
 header ul li{
   display: inline-block;
 }
+/*:not[.mobile],*/
 @media screen and (min-width: 1025px) {
   .small-screen-note{
     display: none;
@@ -99,7 +100,7 @@ header ul li{
     display: none;
   }
 }
-
+/*:not(.mobile),*/
 @media only screen and (min-width : 768px) and (max-width : 1024px){
   .small-screen-note{
     display: none;

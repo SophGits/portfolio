@@ -67,24 +67,6 @@ window.onload = function(){
   $('.test').html('innerwidth: ' + w);
 
 
-  var effectiveDeviceWidth = function() {
-    var deviceWidth = window.orientation == 0 ? window.screen.width : window.screen.height;
-    // iOS returns available pixels, Android returns pixels / pixel ratio
-    // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
-    if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
-      deviceWidth = deviceWidth / window.devicePixelRatio;
-    }
-    $('.test3').html('devicewidth: ' + deviceWidth);
-  }
-  effectiveDeviceWidth();
-
-
-  window.onresize = function(){
-    checkSize();
-    var w = window.innerWidth;
-    $('.test').html('innerwidth: ' + w);
-  }
-
 
   $('.example').click(function(){
     var iframes = $('iframe');
@@ -94,6 +76,34 @@ window.onload = function(){
     }
   });
 
+  var effectiveDeviceWidth = function() {
+    var deviceWidth = window.orientation == 0 ? window.screen.width : window.screen.height;
+    // iOS returns available pixels, Android returns pixels / pixel ratio
+    // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
+    if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
+      deviceWidth = deviceWidth / window.devicePixelRatio;
+    }
+    $('.test3').html('devicewidth: ' + deviceWidth);
+    return deviceWidth;
+  }
+  effectiveDeviceWidth();
+
+  window.onresize = function(){
+    checkSize();
+    var w = window.innerWidth;
+    $('.test').html('innerwidth: ' + w);
+
+    // in phone width, detach iframe and append to current selection
+    $('.left ul li').on('click', '.example', function(e){
+      var name = this.id;
+      if(effectiveDeviceWidth() < 800){
+        name = "." + name;
+        var video = $('iframe').siblings(name)[0];
+        video = $(video).detach();
+        $(this).append(video);
+      }
+    })
+  }
 
 } // window onload
 

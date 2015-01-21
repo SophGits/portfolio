@@ -48,18 +48,19 @@ window.onload = function(){
       var name = this.id;
       name = "." + name;
       var video = $('iframe').siblings(name)[0];
-      video = $(video).detach();
       if($('body').hasClass('mobile')){
+        video = $(video).detach();
         $(this).append(video);
         return
       } else {
-        putBack(video);
+        //         video = $(video).detach();
+        // putBack(video);
       }
     });
-    var putBack = function(video){
-      $('.right').append(video);
-      console.log('should put back video');
-    }
+    // var putBack = function(video){
+    //   $('.right').append(video);
+    //   console.log('should put back video');
+    // }
   }
   var checkSize = function(){
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {

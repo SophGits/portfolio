@@ -44,9 +44,9 @@ header ul li{
 }
 /*:not[.mobile],*/
 @media screen and (min-width: 1025px) {
-  .small-screen-note{
+/*  .small-screen-note{
     display: none;
-  }
+  }*/
   .left{
     width: 50%;
     float: left;
@@ -81,14 +81,14 @@ header ul li{
 /*.mobile,*/
 /*@media screen and (max-device-width: 767px) and (orientation: portrait)*/
 @media screen and (max-width: 767px){
-  .small-screen-note{
+  /*.small-screen-note{
     text-align: center;
-    background: #A40019;/*darkred*/
+    background: #A40019;
     color: white;
     display: block;
     padding: 0.4em 0;
     width: 100%;
-  }
+  }*/
   .left {
     width: 100%;
   }
@@ -192,8 +192,42 @@ small{
   font-size: 0.9em;
   padding: 0.2em 0;
 }
-
-
+.play-video-icon{
+  height: 300px;
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+  background: url('play-video.svg') no-repeat;
+  opacity: 0.65;
+  z-index: 0;
+  background-size: contain;
+  vertical-align: middle;
+}
+.play-video-icon p:hover{
+  color: #0B2161;
+}
+.play-video-icon p{
+  opacity: 1;
+  color: gray;
+  font-size: 2em;
+  line-height: 250px;
+  font-weight: bolder;
+  font-family: 'Tahoma';
+  /*letter-spacing: 2px;*/
+}
+.arrow-left{
+  position: relative;
+  left: 35px;
+  top: 137px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right:12px solid lightgray;
+}
+/*.arrow-left:hover{
+  border-right:12px solid white;
+}*/
 .test, .test2, .test3{
   font-size: 12px;
   color: blue;

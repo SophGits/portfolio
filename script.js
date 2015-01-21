@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  // add a seledcted class to an example
+  // add a selected class to an example
+  // hide bg image
   $('li div').on('click', function(){
+    $('.play-video-icon').css('display', 'none');
     $('li div').removeClass('selected');
     $(this).addClass('selected');
     var name = $(this).attr('id');

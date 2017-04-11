@@ -55,7 +55,7 @@ header ul li{
   vertical-align: middle;
 }
 /*:not[.mobile],*/
-@media screen and (min-width: 1025px) {
+@media  (min-width: 1025px) {
 /*  .small-screen-note{
     display: none;
   }*/
@@ -91,8 +91,8 @@ header ul li{
 }
 
 /*.mobile,*/
-/*@media screen and (max-device-width: 767px) and (orientation: portrait)*/
-@media screen and (max-width: 767px){
+/*@media  (max-device-width: 767px) and (orientation: portrait)*/
+@media  (max-width: 767px){
   /*.small-screen-note{
     text-align: center;
     background: #A40019;
@@ -116,7 +116,7 @@ header ul li{
   }
 }
 /*:not(.mobile),*/
-@media only screen and (min-width : 768px) and (max-width : 1024px){
+@media   (min-width : 768px) and (max-width : 1024px){
   .small-screen-note{
     display: none;
   }
@@ -146,7 +146,7 @@ header ul li{
     width: 100%;
   }
 }
-@media only screen and (max-width : 1024px){
+@media (max-width : 1024px){
   ul {
     clear: both;  /* prevents first bullet point floating right in webkit  */
   }

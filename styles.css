@@ -32,7 +32,6 @@ h2{
 ul{
   padding: 0;
   margin: 0;
-  clear: both; /* prevents first bullet point floating right in webkit */
 }
 ul li{
   list-style-type: circle;
@@ -145,6 +144,11 @@ header ul li{
   }
   .right iframe{
     width: 100%;
+  }
+}
+@media only screen and (max-width : 1024px){
+  ul {
+    clear: both;  /* prevents first bullet point floating right in webkit  */
   }
 }
 iframe{

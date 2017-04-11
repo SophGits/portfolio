@@ -92,7 +92,7 @@ header ul li{
 
 /*.mobile,*/
 /*@media  (max-device-width: 767px) and (orientation: portrait)*/
-@media  (max-width: 767px){
+@media  (max-width: 767px) and and (-webkit-min-device-pixel-ratio: 2) {
   /*.small-screen-note{
     text-align: center;
     background: #A40019;
@@ -116,7 +116,7 @@ header ul li{
   }
 }
 /*:not(.mobile),*/
-@media   (min-width : 768px) and (max-width : 1024px){
+@media   (min-width : 768px) and (max-width : 1024px) and and (-webkit-min-device-pixel-ratio: 2) {
   .small-screen-note{
     display: none;
   }

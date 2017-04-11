@@ -34,6 +34,9 @@ ul{
   margin: 0;
 }
 ul li{
+  list-style-type: none;
+}
+.example ul li {
   list-style-type: circle;
 }
 header, .header{
@@ -153,6 +156,8 @@ header ul li{
 }
 iframe{
   z-index: 0;
+  width: 100%;
+  padding-top: 1em;
 }
 body > footer, footer, .footer{
   display: block;

@@ -74,30 +74,47 @@ window.onload = function(){
   }
   resizeDirection();
 
-  var positionVideos = function(bool){
-     // in phone width, detach iframe and append to current selection
+  var positionVideos = function(originallyMobile){
      var video;
     $('.left ul li').on('click', '.example', function(e){
       var name = this.id;
       name = "." + name;
       video = $('iframe').siblings(name)[0];
+      // in phone width, detach iframe and append to current selection
       if($('body').hasClass('mobile')){
         video = $(video).detach();
         $(this).append(video);
         return video;
       }
-    });
+    }); // on click
+    if($('body').hasClass('mobile') && !originallyMobile){
+      var name = $('.selected').attr('id');
+      video = $('iframe#'+name)[0];
+      video = $(video).detach();
+      $('.selected').append(video);
+      var width = $('.selected').width();
+      video.style.width(width +'px');
+      return video;
+    } else if(!$('body').hasClass('mobile') && originallyMobile) {
+      var name = $('.selected').attr('id');
+      video = $('iframe#'+name)[0];
+      video = $(video).detach();
+      $('.selected').append(video);
+      $('section.right').append(video);
+    }
+   console.log('positioning videos');
   }
 
   var checkSize = function(){
+    var originallyMobile = $('body').hasClass('mobile') ? true : false;
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
       $('body').removeClass('mobile').addClass('mobile');
-    } else if (window.innerWidth <= 767) {
+    } else if (window.innerWidth <= 1024) {
        $('body').removeClass('mobile').addClass('mobile');
-    } else if (window.innerWidth > 767) {
+    } else if (window.innerWidth > 1024) {
        $('body').removeClass('mobile');
     }
-   positionVideos();
+   positionVideos(originallyMobile);
   }
 
   $('.example').click(function(){
@@ -110,7 +127,6 @@ window.onload = function(){
 
   window.onresize = function(){
     var w = window.innerWidth;
-    $('.test').html('innerwidth: ' + w);
     checkSize();
   }
 
@@ -129,3 +145,5 @@ window.onload = function(){
   checkSize();
 } // window onload
 
+// TODO:
+// - loading spinner
